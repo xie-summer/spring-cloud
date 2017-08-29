@@ -8,7 +8,6 @@
         <artifactId>spring-cloud-microservice-study</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <version>1.0-SNAPSHOT</version>
     <artifactId>microservice-discovery-eureka</artifactId>
     <packaging>jar</packaging>
 
