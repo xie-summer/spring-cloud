@@ -50,5 +50,6 @@ eureka:
       defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: true
+    #hostname : user   # 指定主机名时候通过主机名访问,否则通过ip地址
 
 
