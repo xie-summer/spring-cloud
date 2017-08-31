@@ -13,6 +13,9 @@
         <module>../microservice-discovery-eureka-02</module>
         <module>../microservice-discovery-eureka-03</module>
         <module>../microservice-provider-user</module>
+        <module>../microservice-consumer-movie-ribbon</module>
+        <module>../microservice-consumer-movie-feign</module>
+        <module>../microservice-consumer-movie-ribbon-with-hystrix</module>
     </modules>
      <!--使用最新的spring-boot版本-->
     <parent>
@@ -83,7 +86,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖boot项目的项目如果想要使用devtools，需要重新引入 -->
-            <optional>false</optional>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
