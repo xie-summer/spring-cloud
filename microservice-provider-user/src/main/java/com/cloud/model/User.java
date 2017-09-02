@@ -3,17 +3,18 @@ package com.cloud.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
-@Entity
 @Data
-public class User {
+@Table(name = "user")
+public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String username;
-    @Column
+
     private Integer age;
 
-    // getters and setters
 }
