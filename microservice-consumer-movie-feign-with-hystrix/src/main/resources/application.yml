@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: microservice-consumer-movie-feign
+  devtools:
+      restart:
+        additional-paths: src/main/java,src/main/resources
 eureka:
   client:
     serviceUrl:

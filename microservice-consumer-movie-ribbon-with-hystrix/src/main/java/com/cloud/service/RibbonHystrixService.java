@@ -32,7 +32,7 @@ public class RibbonHystrixService {
      * @return 默认的用户
      */
     public User fallback(Long id) {
-        RibbonHystrixService.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
+//        RibbonHystrixService.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
         User user = new User();
         user.setId(-1L);
         user.setUsername("default username");

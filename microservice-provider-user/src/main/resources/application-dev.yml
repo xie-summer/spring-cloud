@@ -1,29 +1,12 @@
-#spring.datasource.url=jdbc:mysql://127.0.0.1:3306/boot?characterEncoding=utf-8
-#spring.datasource.username=root
-#spring.datasource.password=123456
-#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-# 初始化大小，最小，最大
-#spring.datasource.initial-size=5
-#spring.datasource.min-idle=5
-#spring.datasource.max-idle=100
-#spring.datasource.max-wait=10000
-#spring.datasource.validation-query=SELECT 1
-#没次使用连接时进行校验，会影响系统性能。默认为false
-#spring.datasource.test-on-borrow=true
-#spring.datasource.test-while-idle=true
-#spring.datasource.time-between-eviction-runs-millis=27800
-#spring.datasource.jdbc-interceptors=ConnectionState;SlowQueryReport(threshold=0)
-
-#spring:
-#  datasource:
-#    driver-class-name: com.mysql.jdbc.Driver
-#    name: root
-#    password: 123
+#spring.devtools.restart.additional-paths
 server:
   port: 8000
 spring:
   application:
     name: microservice-provider-user    # 项目名称尽量用小写
+  devtools:
+    restart:
+      additional-paths: src/main/java/**
   jpa:
     generate-ddl: false
     show-sql: true

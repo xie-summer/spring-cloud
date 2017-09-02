@@ -20,6 +20,7 @@ import java.util.Properties;
  * Mybatis & Mapper & PageHelper 配置
  */
 @Configuration
+@AutoConfigureAfter(DruidDBConfig.class)
 public class MybatisConfigurer {
     @Resource
     private DataSource dataSource;

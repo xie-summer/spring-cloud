@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
 
-     <!--使用最新的spring-boot版本-->
+    <!--使用最新的spring-boot版本-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,9 +25,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR3</version>
+                <version>Dalston.SR2</version> <!--此处不能使用SR3,会出现jar版本异常 -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,16 +102,16 @@
         </dependency>
     </dependencies>
     <modules>
-        <!--<module>../microservice-discovery-eureka</module>-->
-        <!--<module>../microservice-discovery-eureka-02</module>-->
-        <!--<module>../microservice-discovery-eureka-03</module>-->
-        <!--&lt;!&ndash;<module>../microservice-provider-user</module>&ndash;&gt;-->
-        <!--<module>../microservice-consumer-movie-ribbon</module>-->
-        <!--<module>../microservice-consumer-movie-feign</module>-->
+        <module>../microservice-discovery-eureka</module>
+        <module>../microservice-discovery-eureka-02</module>
+        <module>../microservice-discovery-eureka-03</module>
+        <module>../microservice-provider-user</module>
+        <module>../microservice-consumer-movie-ribbon</module>
+        <module>../microservice-consumer-movie-feign</module>
         <!--<module>../microservice-consumer-movie-ribbon-with-hystrix</module>-->
         <!--<module>../microservice-consumer-movie-feign-with-hystrix</module>-->
-        <!--<module>../microservice-hystrix-dashboard</module>-->
-        <!--<module>../microservice-hystrix-turbine</module>-->
+        <module>../microservice-hystrix-dashboard</module>
+        <module>../microservice-hystrix-turbine</module>
     </modules>
     <build>
         <finalName>${project.artifactId}</finalName>

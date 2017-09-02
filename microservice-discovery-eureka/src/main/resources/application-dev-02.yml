@@ -9,10 +9,12 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://peer2:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
-
----
+--
 spring:
   profiles: peer2
+#  devtools:
+#      restart:
+#        additional-paths: src/main/java,src/main/resources
 server:
   port: 8762
 eureka:

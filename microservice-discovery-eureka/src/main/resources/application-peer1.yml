@@ -1,5 +1,8 @@
 spring:
   profiles: peer1                                 # 指定profile=peer1
+#  devtools:
+#    restart:
+#      additional-paths: src/main/java,src/main/resources
 server:
   port: 8761
 eureka:

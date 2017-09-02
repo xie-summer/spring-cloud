@@ -1,8 +1,12 @@
 package com.cloud.model;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class User {
     private Long id;
     private String username;

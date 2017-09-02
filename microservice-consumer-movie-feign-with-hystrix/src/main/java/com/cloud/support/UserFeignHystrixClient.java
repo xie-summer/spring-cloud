@@ -12,18 +12,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "microservice-provider-user", fallback = UserFeignHystrixClient.HystrixClientFallback.class)
 public interface UserFeignHystrixClient {
     @RequestMapping("/{id}")
-    public User findByIdFeign(@RequestParam("id") Long id);
+    User findByIdFeign(@RequestParam("id") Long id);
 
     /**
      * 这边采取了和Spring Cloud官方文档相同的做法，将fallback类作为内部类放入Feign的接口中，当然也可以单独写一个fallback类。
+     *
      * @author eacdy
      */
     @Component
-    static class HystrixClientFallback implements UserFeignHystrixClient {
+    class HystrixClientFallback implements UserFeignHystrixClient {
         private static final Logger LOGGER = LoggerFactory.getLogger(HystrixClientFallback.class);
 
         /**
          * hystrix fallback方法
+         *
          * @param id id
          * @return 默认的用户
          */
