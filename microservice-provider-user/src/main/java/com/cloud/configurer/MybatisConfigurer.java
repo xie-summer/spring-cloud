@@ -6,6 +6,7 @@ import com.cloud.core.ProjectConstant;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,6 @@ import java.util.Properties;
  * Mybatis & Mapper & PageHelper 配置
  */
 @Configuration
-//@AutoConfigureAfter(DruidDBConfig.class)
 public class MybatisConfigurer {
     @Resource
     private DataSource dataSource;
@@ -31,7 +31,6 @@ public class MybatisConfigurer {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setTypeAliasesPackage(ProjectConstant.MODEL_PACKAGE);
-
         //分页插件
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
