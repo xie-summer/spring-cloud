@@ -12,7 +12,7 @@ public class RibbonHystrixController {
     @Autowired
     private RibbonHystrixService ribbonHystrixService;
 
-    @GetMapping("/ribbon/{id}")
+    @GetMapping("/ribbon/hystrix/{id}")
     public User findById(@PathVariable Long id) {
         return this.ribbonHystrixService.findById(id);
     }

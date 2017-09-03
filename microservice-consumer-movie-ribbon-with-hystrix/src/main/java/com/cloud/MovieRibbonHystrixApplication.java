@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableCircuitBreaker
+@EnableCircuitBreaker  /**开启断路器功能*/
 @EnableDiscoveryClient
 public class MovieRibbonHystrixApplication {
     /**
