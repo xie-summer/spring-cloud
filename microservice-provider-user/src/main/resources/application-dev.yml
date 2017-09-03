@@ -6,13 +6,14 @@ spring:
     name: microservice-provider-user    # 项目名称尽量用小写
   datasource:                           # 指定数据源
     platform: mysql                # 指定数据源类型
-    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
-    data: classpath:data.sql            # 指定h2数据库的insert脚本
-    # 数据库参数
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123
-    url: jdbc:mysql://127.0.0.1:3306/cloud?characterEncoding=utf-8
+#    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
+#    data: classpath:data.sql            # 指定h2数据库的insert脚本
+
+    # 数据库参数  #如果有配置,按照这个配置优先,如果没有按照db.properties配置
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://127.0.0.1:3306/cloud?characterEncoding=utf-8
 
 
 logging:
