@@ -31,7 +31,7 @@ public class UserController {
     public User findById(@PathVariable Long id) {
         User one = new User();
         one.setId(id.intValue());
-        User user = (User)this.userMapper.selectOne(one);
+        User user = this.userMapper.selectOne(one);
         System.out.print(user);
         return user;
     }
