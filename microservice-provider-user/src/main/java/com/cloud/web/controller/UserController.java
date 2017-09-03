@@ -32,7 +32,7 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
-        User user = this.userService.findById(id.intValue());
+        User user = this.userService.selectByid(id.intValue());
         System.out.print(user);
         return user;
     }
