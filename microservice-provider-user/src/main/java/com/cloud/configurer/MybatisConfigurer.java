@@ -1,5 +1,6 @@
 package com.cloud.configurer;
 
+import com.github.abel533.mapperhelper.MapperInterceptor;
 import com.github.pagehelper.PageHelper;
 import com.cloud.core.ProjectConstant;
 import org.apache.ibatis.plugin.Interceptor;
@@ -20,7 +21,7 @@ import java.util.Properties;
  * Mybatis & Mapper & PageHelper 配置
  */
 @Configuration
-@AutoConfigureAfter(DruidDBConfig.class)
+//@AutoConfigureAfter(DruidDBConfig.class)
 public class MybatisConfigurer {
     @Resource
     private DataSource dataSource;
@@ -39,9 +40,18 @@ public class MybatisConfigurer {
         properties.setProperty("returnPageInfo", "check");
         properties.setProperty("params", "count=countSql");
         pageHelper.setProperties(properties);
-
+        /**abel533通用mapper*/
+        MapperInterceptor mapperInterceptor = new MapperInterceptor();
+        Properties props = new Properties();
+        /**--主键自增回写方法,默认值MYSQL,详细说明请看文档 -->*/
+        props.setProperty("IDENTITY","MYSQL");
+        /**<!--通用Mapper接口，多个通用接口用逗号隔开 -->*/
+        props.setProperty("mappers", "com.github.abel533.mapper.Mapper");
+        mapperInterceptor.setProperties(props);
         //添加插件
         bean.setPlugins(new Interceptor[]{pageHelper});
+        bean.setPlugins(new Interceptor[]{mapperInterceptor});
+
 
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
@@ -58,7 +68,7 @@ public class MybatisConfigurer {
             MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
             mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactoryBean");
             mapperScannerConfigurer.setBasePackage(ProjectConstant.MAPPER_PACKAGE);
-            //配置通用mappers
+            //配置通用mappers(tk通用mapper)
             Properties properties = new Properties();
             properties.setProperty("mappers", ProjectConstant.MAPPER_INTERFACE_REFERENCE);
             properties.setProperty("notEmpty", "false");

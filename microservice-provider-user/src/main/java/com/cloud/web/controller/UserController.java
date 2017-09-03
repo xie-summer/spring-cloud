@@ -29,7 +29,10 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
-        User user = this.userMapper.selectByPrimaryKey(id.intValue());
+        User one = new User();
+        one.setId(id.intValue());
+        User user = (User)this.userMapper.selectOne(one);
+        System.out.print(user);
         return user;
     }
 
