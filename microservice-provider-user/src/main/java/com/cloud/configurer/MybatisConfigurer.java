@@ -1,6 +1,5 @@
 package com.cloud.configurer;
 
-import com.github.abel533.mapperhelper.MapperInterceptor;
 import com.github.pagehelper.PageHelper;
 import com.cloud.core.ProjectConstant;
 import org.apache.ibatis.plugin.Interceptor;
@@ -41,16 +40,16 @@ public class MybatisConfigurer {
         properties.setProperty("params", "count=countSql");
         pageHelper.setProperties(properties);
         /**abel533通用mapper*/
-        MapperInterceptor mapperInterceptor = new MapperInterceptor();
-        Properties props = new Properties();
-        /**--主键自增回写方法,默认值MYSQL,详细说明请看文档 -->*/
-        props.setProperty("IDENTITY","MYSQL");
-        /**<!--通用Mapper接口，多个通用接口用逗号隔开 -->*/
-        props.setProperty("mappers", "com.github.abel533.mapper.Mapper");
-        mapperInterceptor.setProperties(props);
+//        MapperInterceptor mapperInterceptor = new MapperInterceptor();
+//        Properties props = new Properties();
+//        /**--主键自增回写方法,默认值MYSQL,详细说明请看文档 -->*/
+//        props.setProperty("IDENTITY","MYSQL");
+//        /**<!--通用Mapper接口，多个通用接口用逗号隔开 -->*/
+//        props.setProperty("mappers", "com.github.abel533.mapper.Mapper");
+//        mapperInterceptor.setProperties(props);
         //添加插件
         bean.setPlugins(new Interceptor[]{pageHelper});
-        bean.setPlugins(new Interceptor[]{mapperInterceptor});
+//        bean.setPlugins(new Interceptor[]{mapperInterceptor});
 
 
         //添加XML目录
@@ -70,7 +69,7 @@ public class MybatisConfigurer {
             mapperScannerConfigurer.setBasePackage(ProjectConstant.MAPPER_PACKAGE);
             //配置通用mappers(tk通用mapper)
             Properties properties = new Properties();
-            properties.setProperty("mappers", ProjectConstant.MAPPER_INTERFACE_REFERENCE);
+            properties.setProperty("mappers", ProjectConstant.MAPPER_BASE_PACKAGE);
             properties.setProperty("notEmpty", "false");
             properties.setProperty("IDENTITY", "MYSQL");
             mapperScannerConfigurer.setProperties(properties);

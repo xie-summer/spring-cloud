@@ -2,6 +2,7 @@ package com.cloud.web.controller;
 
 import com.cloud.mapper.UserMapper;
 import com.cloud.model.User;
+import com.cloud.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -18,6 +19,8 @@ public class UserController {
     private DiscoveryClient discoveryClient;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserService userService;
 
     /**
      * 注：@GetMapping("/{id}")是spring 4.3的新注解等价于：
@@ -29,9 +32,7 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
-        User one = new User();
-        one.setId(id.intValue());
-        User user = this.userMapper.selectOne(one);
+        User user = this.userService.findById(id.intValue());
         System.out.print(user);
         return user;
     }
