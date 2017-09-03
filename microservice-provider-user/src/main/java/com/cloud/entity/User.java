@@ -1,4 +1,4 @@
-package com.cloud.model;
+package com.cloud.entity;
 
 import lombok.*;
 

@@ -1,7 +1,7 @@
 package com.cloud.mapper;
 
 import com.cloud.core.Mapper;
-import com.cloud.model.User;
+import com.cloud.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;

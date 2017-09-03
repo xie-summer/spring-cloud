@@ -1,7 +1,6 @@
 package com.cloud.web.controller;
 
-import com.cloud.mapper.UserMapper;
-import com.cloud.model.User;
+import com.cloud.entity.User;
 import com.cloud.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -30,7 +29,7 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User findById(@PathVariable Integer id) {
-        User user1 = userService.findById(id); /**报错类型转换错误*/
+//        User user1 = userService.findById(id); /**报错类型转换错误*/
         User user = userService.selectByid(id); /**可以*/
         System.out.print(user);
         return user;

@@ -2,7 +2,7 @@ package com.cloud.service.user.impl;
 
 import com.cloud.core.AbstractService;
 import com.cloud.mapper.UserMapper;
-import com.cloud.model.User;
+import com.cloud.entity.User;
 import com.cloud.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
