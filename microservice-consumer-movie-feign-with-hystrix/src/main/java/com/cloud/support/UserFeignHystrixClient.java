@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * 必须配置开启断路器,默认是false
+ */
 @FeignClient(name = "microservice-provider-user", fallback = UserFeignHystrixClient.HystrixClientFallback.class)
 public interface UserFeignHystrixClient {
     @RequestMapping("/{id}")
