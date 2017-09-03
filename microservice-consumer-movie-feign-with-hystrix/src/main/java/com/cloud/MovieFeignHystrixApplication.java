@@ -8,8 +8,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableCircuitBreaker //kak
+@EnableCircuitBreaker //kak
 @EnableFeignClients
+
 public class MovieFeignHystrixApplication {
 
     public static void main(String[]args){
