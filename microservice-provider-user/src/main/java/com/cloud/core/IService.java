@@ -20,6 +20,7 @@ public interface IService<T> {
     void update(T model);//更新
 
     T findById(Integer id);//通过ID查找
+    T findById(Object id);//通过ID查找
 
     T findBy(String property, Object value) throws TooManyResultsException; //通过某个成员属性查找,value需符合unique约束
 

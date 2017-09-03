@@ -1,5 +1,6 @@
 package com.cloud.configurer;
 
+import com.cloud.core.Mapper;
 import com.github.pagehelper.PageHelper;
 import com.cloud.core.ProjectConstant;
 import org.apache.ibatis.plugin.Interceptor;
@@ -69,7 +70,8 @@ public class MybatisConfigurer {
             mapperScannerConfigurer.setBasePackage(ProjectConstant.MAPPER_PACKAGE);
             //配置通用mappers(tk通用mapper)
             Properties properties = new Properties();
-            properties.setProperty("mappers", ProjectConstant.MAPPER_BASE_PACKAGE);
+            properties.setProperty("mappers", Mapper.class.getName());
+//            properties.setProperty("mappers", ProjectConstant.MAPPER_BASE_PACKAGE);
             properties.setProperty("notEmpty", "false");
             properties.setProperty("IDENTITY", "MYSQL");
             mapperScannerConfigurer.setProperties(properties);

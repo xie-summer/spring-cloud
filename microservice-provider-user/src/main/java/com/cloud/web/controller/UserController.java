@@ -18,8 +18,6 @@ public class UserController {
     @Autowired
     private DiscoveryClient discoveryClient;
     @Autowired
-    private UserMapper userMapper;
-    @Autowired
     private UserService userService;
 
     /**
@@ -31,8 +29,9 @@ public class UserController {
      * 类似的注解还有@PostMapping等等
      */
     @GetMapping("/{id}")
-    public User findById(@PathVariable Long id) {
-        User user = this.userService.selectByid(id.intValue());
+    public User findById(@PathVariable Integer id) {
+        User user1 = userService.findById(id); /**报错类型转换错误*/
+        User user = userService.selectByid(id); /**可以*/
         System.out.print(user);
         return user;
     }
