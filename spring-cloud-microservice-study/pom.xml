@@ -115,8 +115,8 @@
         <module>../microservice-provider-user</module>
         <module>../microservice-consumer-movie-ribbon</module>
         <module>../microservice-consumer-movie-feign</module>
-        <!--<module>../microservice-consumer-movie-ribbon-with-hystrix</module>-->
-        <!--<module>../microservice-consumer-movie-feign-with-hystrix</module>-->
+        <module>../microservice-consumer-movie-ribbon-with-hystrix</module>
+        <module>../microservice-consumer-movie-feign-with-hystrix</module>
         <module>../microservice-hystrix-dashboard</module>
         <module>../microservice-hystrix-turbine</module>
         <module>../microservice-consumer-movie-feign-with-hystrix-stream</module>
