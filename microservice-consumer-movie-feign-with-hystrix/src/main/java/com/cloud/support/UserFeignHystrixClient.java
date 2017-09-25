@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 必须配置开启断路器,默认是false
  */
 @FeignClient(name = "microservice-provider-user", fallback = UserFeignHystrixClient.HystrixClientFallback.class)
+@Service
 public interface UserFeignHystrixClient {
     @RequestMapping("/{id}")
     User findByIdFeign(@RequestParam("id") Long id);
