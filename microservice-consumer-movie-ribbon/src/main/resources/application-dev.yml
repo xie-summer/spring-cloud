@@ -4,8 +4,9 @@ spring:
   application:
     name: microservice-consumer-movie-ribbon
 eureka:
+  host: discovery
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://root@password${eureka.host}:8761/eureka/
   instance:
     preferIpAddress: true

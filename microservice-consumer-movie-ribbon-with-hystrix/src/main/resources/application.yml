@@ -4,9 +4,10 @@ spring:
   application:
     name: microservice-consumer-movie-ribbon-with-hystrix
 eureka:
+  host: discovery
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://root@password${eureka.host}:8761/eureka/
   instance:
     hostname: ribbon          # 此处，preferIpAddress不设置或者设为false，
                               #不能设为true，否则影响turbine的测试。
