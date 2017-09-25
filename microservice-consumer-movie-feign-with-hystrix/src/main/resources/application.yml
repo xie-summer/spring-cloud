@@ -7,7 +7,7 @@ eureka:
   host: discovery
   client:
     serviceUrl:
-      defaultZone: http://root@password${eureka.host}:8761/eureka/
+      defaultZone: http://root:password@${eureka.host}:8761/eureka/
   instance:
     preferIpAddress: true
 feign:  # 必须配置开启断路器,默认false

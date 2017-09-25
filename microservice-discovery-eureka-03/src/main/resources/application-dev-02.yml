@@ -8,7 +8,7 @@ eureka:
     hostname: peer1                               # 指定当profile=peer1时，主机名
   client:
     serviceUrl:
-      defaultZone: http://peer2:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
+      defaultZone: http://root:password@peer2:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
 
 #---
 spring:
@@ -20,4 +20,4 @@ eureka:
     hostname: peer2
   client:
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://root:password@peer1:8761/eureka/

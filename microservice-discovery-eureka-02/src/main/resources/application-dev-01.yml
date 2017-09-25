@@ -7,7 +7,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://root@password${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://root:password@${eureka.instance.hostname}:${server.port}/eureka/
 
 # 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
 # 参考文档：http://my.oschina.net/buwei/blog/618756
